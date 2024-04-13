@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 
 // Static directory path
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, '/dist/frontend')));
 
 //API root
 app.use("/api/parkings", parkingRoutes);
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     res.send('invaild endpoint');
 });
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/src/index.html'));
+    res.sendFile(path.join(__dirname, '/dist/frontend/index.html'));
 });
 // error handler
 app.use(function (err, req, res, next) {
